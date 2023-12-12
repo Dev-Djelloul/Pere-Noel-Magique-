@@ -1,0 +1,123 @@
+body {
+  font-size: 16px;
+  line-height: 3;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(to bottom, #c70039, #2a9d8f);
+  color: whitesmoke;
+  text-align: center;
+  margin: 50px;
+  position: relative; /* Permet le positionnement absolu des flocons de neige */
+}
+
+
+h1,
+h2 {
+  background: linear-gradient(to bottom, #c70039, #2a9d8f);
+  margin: 25px;
+  border-radius: 80px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 50px;
+}
+
+fa-solid {
+  color: #e3db47;
+}
+
+#countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+#countdown div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Courier New", Courier, monospace;
+  width: 250px;
+  height: 150px;
+  border-radius: 20px;
+  color: #c70039;
+  background: radial-gradient(
+    circle at 50% 120%,
+    #ffffff,
+    #efefef 60%,
+    #aeaeae 100%
+  );
+  text-align: center;
+  position: relative;
+  top: 1px;
+  left: 30px;
+  font-size: 30px;
+}
+
+#lettre {
+  margin: 100px;
+}
+
+#submit-button {
+  margin: 0px 10px 0px 10px;
+  background: linear-gradient(to bottom, #c70039, #2a9d8f);
+  color: whitesmoke;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: #aeaeae 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#submit-button:hover {
+  color: #2a9d8f;
+}
+
+
+/* Animation de neige */
+.snowflake {
+    position: absolute;
+    content: "❄️";
+    font-size: 2rem;
+    animation: snowfall linear infinite;
+    pointer-events: none; /* Les flocons ne réagiront pas aux événements de souris */
+  }
+  
+  @keyframes snowfall {
+    0% {
+      transform: translateY(-100vh) rotate(0deg);
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+    }
+  }
+  
+  .snowflake::before,
+  .snowflake::after {
+    content: "❄️";
+    position: absolute;
+    font-size: 2rem;
+    animation: snowfall linear infinite;
+  }
+  
+  .snowflake::before {
+    left: 20px;
+  }
+  
+  .snowflake::after {
+    left: -20px;
+  }
+
+
+
+ 

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&family=Rubik+Bubbles&family=Silkscreen&display=swap"
+      rel="stylesheet"
+    />
+    <title>Site magique du Père Noël</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        🎅🏻 Bienvenue sur le Site Magique du Père Noël 🎅🏻
+        <br />🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁
+      </h1>
+    </header>
+
+    <section id="rennes">
+      <img src="./images/reindeer-christmas.png" alt="Christmas Reindeer" />
+    </section>
+
+    <section id="presentation">
+      <h2>✨🎄 La Magie de Noël 🎄✨</h2>
+      <p>
+        Plongez dans l'aventure aux côtés des rennes du Père Noël, ces créatures
+        majestueuses qui sillonnent les cieux, propulsant le traîneau chargé de
+        cadeaux. Leurs sabots dansent sur la neige, portant avec eux l'esprit de
+        la fête.
+      </p>
+      <p>
+        Le Père Noël et ses rennes sont prêts à vous emmener dans un voyage
+        magique. Vous pouvez même soumettre votre lettre de Noël pour que le
+        Père Noël puisse la lire avant de partir pour sa tournée.
+      </p>
+      <p>
+        Découvrez l'essence même de Noël, une célébration empreinte de chaleur,
+        de partage et de moments précieux en famille. Les rires résonnent comme
+        des cloches, les décorations brillent de mille feux, et chaque coin de
+        rue évoque une histoire festive.
+      </p>
+    </section>
+
+    <section id="compte-a-rebours">
+      <h2>Le Jour J arrive bientôt !</h2>
+      <div id="countdown">
+        <script>
+          // Fonction pour mettre à jour le compte à rebours
+          function updateCountdown() {
+            // Date de Noël (25 décembre)
+            const christmasDate = new Date(
+              "December 25, 2023 00:00:00"
+            ).getTime();
+
+            // Date actuelle
+            const currentDate = new Date().getTime();
+
+            // Calcul du temps restant en millisecondes
+            const timeRemaining = christmasDate - currentDate;
+
+            // Calcul des jours, heures, minutes et secondes
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor(
+              (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            );
+            const minutes = Math.floor(
+              (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
+            );
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            // Affichage du compte à rebours
+            document.getElementById("countdown").innerHTML = `
+                <div>${days} jours</div>
+                <div>${hours} heures</div>
+                <div>${minutes} minutes</div>
+                <div>${seconds} secondes</div>
+            `;
+
+            // Mise à jour toutes les secondes
+            setTimeout(updateCountdown, 1000);
+          }
+
+          // Appel initial de la fonction
+          updateCountdown();
+        </script>
+      </div>
+    </section>
+
+    <section id="lettre">
+      <button id="submit-button" onclick="soumettreLettre()">
+        ✨ J'ajoute ma Lettre Magique ✨
+      </button>
+      <script>
+        function soumettreLettre() {
+          // Ajoutez votre logique de soumission de lettre ici
+        }
+      </script>
+    </section>
+
+    <!-- Ajout des flocons de neige -->
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+
+    <script>
+      document.addEventListener("mousemove", function (e) {
+        // Récupérer la position de la souris
+        const mouseX = e.pageX;
+        const mouseY = e.pageY;
+
+        // Appliquer la position aux flocons de neige
+        const snowflakes = document.querySelectorAll(".snowflake");
+        snowflakes.forEach(function (snowflake, index) {
+          const deltaX = mouseX - snowflake.offsetLeft;
+          const deltaY = mouseY - snowflake.offsetTop;
+
+          // Mettre à jour la position des flocons en fonction de la position de la souris
+          snowflake.style.transform = `translate(${deltaX * (index + 1)}px, ${
+            deltaY * (index + 1)
+          }px)`;
+        });
+      });
+    </script>
+    
+    <footer>
+      <p>&copy; 2023 Site Magique du Père Noël. Tous droits réservés.</p>
+    </footer>
+
+  </body>
+</html>
