@@ -16,12 +16,13 @@
   <body>
     <header>
       <h1>
-        🎅🏻 Bienvenue sur le Site Magique du Père Noël 🎅🏻
-        <br />🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁
+        🎅🏻 WELCOME TO THE MAGICAL HOUSE OF SANTA CLAUS 🎅🏻
+        <br />🎁🎁🎁🎁🎁🎁🎁🎁
+    </h1>
       </h1>
     </header>
 
-    <section id="rennes">
+    <section class="rennes-1">
       <img src="./images/reindeer-christmas.png" alt="Christmas Reindeer" />
     </section>
 
@@ -39,10 +40,10 @@
         Père Noël puisse la lire avant de partir pour sa tournée.
       </p>
       <p>
-        Découvrez l'essence même de Noël, une célébration empreinte de chaleur,
-        de partage et de moments précieux en famille. Les rires résonnent comme
-        des cloches, les décorations brillent de mille feux, et chaque coin de
-        rue évoque une histoire festive.
+        Découvrez l'essence de Noël, une célébration empreinte de chaleur, de
+        partage et de moments précieux en famille. Les rires résonnent comme des
+        cloches, les décorations brillent de mille feux, et chaque coin de rue
+        évoque une histoire festive.
       </p>
     </section>
 
@@ -91,10 +92,32 @@
       </div>
     </section>
 
+  
+    <section id="share-experience">
+      <h2>Partagez votre expérience</h2>
+      <form id="experience-form">
+        <label for="pseudo">Votre pseudo </label>
+        <input class="pseudo-form" type="text" id="pseudo" name="pseudo" required />
+
+        <label for="description">Décrivez votre expérience </label>
+        <textarea class="description-experience" id="description" name="description" required></textarea>
+      </form>
+      <button class="submit-experience" type="button" onclick="soumettreExperience()">OK</button>
+
+      <div id="avis-validation">
+        <!-- Cette section affichera les avis validés par les Elfes -->
+      </div>
+    </section>
+
+    
+
+    <section id="rennes-2">
+      <img src="images/reindeer-christmas (1).png"Christmas Reindeer" />
+    </section>
+
     <section id="lettre">
-      <button id="submit-button" onclick="soumettreLettre()">
-        ✨ J'ajoute ma Lettre Magique ✨
-      </button>
+      <h4>✨ J'ajoute ma Lettre Magique ✨ <br /></h4>
+      <button id="submit-letter" onclick="soumettreLettre()">Cliquez !</button>
       <script>
         function soumettreLettre() {
           // Ajoutez votre logique de soumission de lettre ici
@@ -129,10 +152,28 @@
         });
       });
     </script>
-    
+
     <footer>
       <p>&copy; 2023 Site Magique du Père Noël. Tous droits réservés.</p>
     </footer>
 
+    <script>
+        function soumettreExperience() {
+          const pseudo = document.getElementById("pseudo").value;
+          const description = document.getElementById("description").value;
+      
+          // Soumettez les données au serveur ou à une base de données
+          // pour la validation par les Elfes (côté serveur).
+      
+          // Pour cet exemple, affichons simplement l'avis soumis.
+          const avisValidation = document.getElementById("avis-validation");
+          const nouvelAvis = document.createElement("div");
+          nouvelAvis.innerHTML = `<strong>${pseudo} </strong> ${description}`;
+          avisValidation.appendChild(nouvelAvis);
+      
+          // Réinitialisez le formulaire après la soumission
+          document.getElementById("experience-form").reset();
+        }
+      </script>
   </body>
 </html>

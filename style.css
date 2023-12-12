@@ -1,26 +1,49 @@
 body {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 3;
   text-align: center;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif,
+    sans-serif, sans-serif;
   background: linear-gradient(to bottom, #c70039, #2a9d8f);
-  color: whitesmoke;
+  color: rgb(236, 228, 228);
   text-align: center;
   margin: 50px;
   position: relative; /* Permet le positionnement absolu des flocons de neige */
+  overflow-x: hidden;
 }
 
+.border-line {
+  border-bottom: 10px solid #036257;
+  color: linear-gradient(to bottom, #c70039, #2a9d8f);
+  border-radius: 20px;
+  margin: 50px 0px 50px 300px;
+  width: 50%;
+}
 
-h1,
+h1 {
+  font-size: 80px;
+}
+
 h2 {
   background: linear-gradient(to bottom, #c70039, #2a9d8f);
-  margin: 25px;
+  margin: 35px;
   border-radius: 80px;
   border-top-right-radius: 0px;
   border-bottom-left-radius: 0px;
+}
+h3 {
+  background: linear-gradient(to bottom, #c70039, #2a9d8f);
+  margin: 5px;
+  border-radius: 80px;
+  border-top-right-radius: 100px;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  height: 15px;
+  font-size: 30px;
 }
 
 img {
@@ -29,16 +52,12 @@ img {
   border-radius: 50px;
 }
 
-fa-solid {
-  color: #e3db47;
-}
-
 #countdown {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   font-size: 1.2rem;
-  margin-top: 20px;
+  margin: 50px;
 }
 
 #countdown div {
@@ -46,7 +65,7 @@ fa-solid {
   flex-direction: column;
   justify-content: center;
   font-family: "Courier New", Courier, monospace;
-  width: 250px;
+  width: 220px;
   height: 150px;
   border-radius: 20px;
   color: #c70039;
@@ -58,13 +77,72 @@ fa-solid {
   );
   text-align: center;
   position: relative;
-  top: 1px;
+  top: 20px;
   left: 30px;
   font-size: 30px;
 }
 
-#lettre {
+#rennes-2 {
   margin: 100px;
+}
+
+#share-experience {
+  margin: 100px;
+}
+
+#experience-form {
+  margin: 100px 100px 0px 100px;
+}
+
+.description-experience {
+  width: 500px;
+  height: 200px;
+  border-radius: 5px;
+  color: #c70039;
+  background-color: rgb(136, 163, 206);
+}
+
+.pseudo-form {
+  margin-right: 10px;
+  height: 25px;
+  margin-bottom: -50px;
+  border-radius: 20px;
+  color: #c70039;
+  background-color: rgb(136, 163, 206);
+}
+
+.submit-experience {
+  width: 105px;
+  height: 55px;
+  border-radius: 5px;
+  border: #aeaeae 1px solid;
+  background:  linear-gradient(to bottom, #c70039, #2a9d8f);
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+#lettre {
+  margin: 150px;
+}
+
+#submit-letter {
+  margin: 0px 10px 0px 10px;
+  background: linear-gradient(to bottom, #c70039, #2a9d8f);
+  color: whitesmoke;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: #aeaeae 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#submit-letter:hover {
+  color: #2a9d8f;
+}
+
+#lettre {
+  margin: 150px;
 }
 
 #submit-button {
@@ -83,41 +161,36 @@ fa-solid {
   color: #2a9d8f;
 }
 
-
 /* Animation de neige */
 .snowflake {
-    position: absolute;
-    content: "❄️";
-    font-size: 2rem;
-    animation: snowfall linear infinite;
-    pointer-events: none; /* Les flocons ne réagiront pas aux événements de souris */
-  }
-  
-  @keyframes snowfall {
-    0% {
-      transform: translateY(-100vh) rotate(0deg);
-    }
-    100% {
-      transform: translateY(100vh) rotate(360deg);
-    }
-  }
-  
-  .snowflake::before,
-  .snowflake::after {
-    content: "❄️";
-    position: absolute;
-    font-size: 2rem;
-    animation: snowfall linear infinite;
-  }
-  
-  .snowflake::before {
-    left: 20px;
-  }
-  
-  .snowflake::after {
-    left: -20px;
-  }
+  position: absolute;
+  content: "❄️";
+  font-size: 2rem;
+  animation: snowfall linear infinite;
+  pointer-events: none; /* Les flocons ne réagiront pas aux événements de souris */
+}
 
+@keyframes snowfall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
 
+.snowflake::before,
+.snowflake::after {
+  content: "❄️";
+  position: absolute;
+  font-size: 2rem;
+  animation: snowfall linear infinite;
+}
 
- 
+.snowflake::before {
+  left: 20px;
+}
+
+.snowflake::after {
+  left: -20px;
+}
