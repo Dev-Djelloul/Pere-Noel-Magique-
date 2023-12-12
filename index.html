@@ -22,7 +22,7 @@
       </h1>
     </header>
 
-    <section class="rennes-1">
+    <section id="rennes-1">
       <img src="./images/reindeer-christmas.png" alt="Christmas Reindeer" />
     </section>
 
@@ -47,8 +47,82 @@
       </p>
     </section>
 
+<!-- Formulaire de Soumission sur la Page d'Accueil -->
+<section>
+   <h2>🎄🎅📝 Tout d'abord, fais ta liste de souhaits 📝🎅🎄</h2> 
+
+  <form id="formulaireLettre" onsubmit="soumettreLettre(); return false;">
+  <!-- Champs pour les informations personnelles -->
+  <label  for="nom">Nom :</label>
+  <input class="lastname"  type="text" id="nom" required>
+
+  <label for="prenom">Prénom :</label>
+  <input class="firstname" type="text" id="prenom" required>
+
+  <label for="age">Âge :</label>
+  <input class="age"  type="number" id="age" required>
+
+  <label for="adresse">Adresse :</label>
+  <input class="address"id="adresse" required><br>
+
+  <!-- Champs pour la sélection ou création de cadeaux -->
+  <label  for="cadeaux">Cadeaux :</label>
+  <select class="gift" id="cadeaux" multiple>
+    <!-- Options de cadeaux depuis le catalogue -->
+    <option value="cadeau1">Cadeau 1</option>
+    <option value="cadeau2">Cadeau 2</option>
+    <!-- Ajoutez d'autres options depuis le catalogue -->
+
+    <!-- Option pour créer un nouveau cadeau -->
+    <option value="nouveau">Créer un nouveau cadeau</option>
+  </select>
+
+  <!-- Champs pour la création de nouveaux cadeaux -->
+  <div id="nouveauxCadeaux" style="display: none;">
+    <label for="nouveauCadeauNom">Nom du nouveau cadeau :</label>
+    <input type="text" id="nouveauCadeauNom">
+
+    <label for="nouveauCadeauDescription">Description :</label>
+    <textarea id="nouveauCadeauDescription"></textarea>
+
+    <!-- Ajoutez d'autres champs pour les nouveaux cadeaux si nécessaire -->
+  </div>
+
+  <!-- Bouton de Soumission -->
+  <button id="submit-letter" type="submit">Soumettre ma liste de cadeaux</button>
+</form>
+</section>
+
+<script>
+  function soumettreLettre() {
+    // Récupérez les valeurs du formulaire
+    const nom = document.getElementById("nom").value;
+    const prenom = document.getElementById("prenom").value;
+    const age = document.getElementById("age").value;
+    const adresse = document.getElementById("adresse").value;
+
+    // Récupérez les cadeaux sélectionnés ou créés
+    const cadeauxSelect = document.getElementById("cadeaux");
+    const cadeauxSelectionnes = Array.from(cadeauxSelect.selectedOptions).map(option => option.value);
+
+    // Vérifiez si des nouveaux cadeaux ont été créés
+    if (cadeauxSelectionnes.includes("nouveau")) {
+      const nouveauCadeauNom = document.getElementById("nouveauCadeauNom").value;
+      const nouveauCadeauDescription = document.getElementById("nouveauCadeauDescription").value;
+
+      // Ajoutez la logique pour envoyer les nouveaux cadeaux aux Elfes
+      // (vous pouvez utiliser une API ou une autre méthode pour cela)
+    }
+
+    // Ajoutez la logique pour envoyer la lettre au backend
+    // (vous pouvez utiliser une API ou une autre méthode pour cela)
+  }
+</script>
+
+   
+
     <section id="compte-a-rebours">
-      <h2>Le Jour J arrive bientôt !</h2>
+      <h2>Depêche toi le Jour J approche ..</h2>
       <div id="countdown">
         <script>
           // Fonction pour mettre à jour le compte à rebours
@@ -94,15 +168,15 @@
 
   
     <section id="share-experience">
-      <h2>Partagez votre expérience</h2>
+      <h2>Puis partage moi ton expérience !</h2>
       <form id="experience-form">
-        <label for="pseudo">Votre pseudo </label>
+        <label for="pseudo">Ton pseudo </label>
         <input class="pseudo-form" type="text" id="pseudo" name="pseudo" required />
 
-        <label for="description">Décrivez votre expérience </label>
+        <label for="description">Décris moi tes expériences </label>
         <textarea class="description-experience" id="description" name="description" required></textarea>
       </form>
-      <button class="submit-experience" type="button" onclick="soumettreExperience()">OK</button>
+      <button id="submit-experience" type="button" onclick="soumettreExperience()">Je valide ! </button>
 
       <div id="avis-validation">
         <!-- Cette section affichera les avis validés par les Elfes -->
@@ -110,20 +184,10 @@
     </section>
 
     
-
     <section id="rennes-2">
       <img src="images/reindeer-christmas (1).png"Christmas Reindeer" />
     </section>
 
-    <section id="lettre">
-      <h4>✨ J'ajoute ma Lettre Magique ✨ <br /></h4>
-      <button id="submit-letter" onclick="soumettreLettre()">Cliquez !</button>
-      <script>
-        function soumettreLettre() {
-          // Ajoutez votre logique de soumission de lettre ici
-        }
-      </script>
-    </section>
 
     <!-- Ajout des flocons de neige -->
     <div class="snowflake"></div>

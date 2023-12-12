@@ -5,8 +5,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif,
-    sans-serif, sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   background: linear-gradient(to bottom, #c70039, #2a9d8f);
   color: rgb(236, 228, 228);
   text-align: center;
@@ -24,16 +23,22 @@ body {
 }
 
 h1 {
-  font-size: 80px;
+  font-size: 75px;
+  box-shadow: #aeaeae 0px 0px 10px 0px;
 }
 
 h2 {
   background: linear-gradient(to bottom, #c70039, #2a9d8f);
-  margin: 35px;
+  margin: 0px 0px 0px 0px;
   border-radius: 80px;
   border-top-right-radius: 0px;
   border-bottom-left-radius: 0px;
 }
+
+h2:hover {
+  color: tomato;
+}
+
 h3 {
   background: linear-gradient(to bottom, #c70039, #2a9d8f);
   margin: 5px;
@@ -52,6 +57,50 @@ img {
   border-radius: 50px;
 }
 
+#formulaireLettre {
+  margin: 60px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lastname {
+  width: 30%;
+  height: 25px;
+  border-radius: 15px;
+  background-color: rgb(136, 163, 206);
+}
+
+.firstname {
+  width: 30%;
+  height: 25px;
+  border-radius: 15px;
+  background-color: rgb(136, 163, 206);
+}
+
+.age {
+  display: flex;
+  justify-content: center;
+  width: 15%;
+  height: 25px;
+  border-radius: 15px;
+  background-color: rgb(136, 163, 206);
+}
+
+.address {
+  width: 30%;
+  height: 100px;
+  border-radius: 15px;
+  background-color: rgb(136, 163, 206);
+}
+
+.gift {
+  width: 45%;
+  height: 100px;
+  border-radius: 15px;
+  background-color: rgb(136, 163, 206);
+}
+
 #countdown {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -66,7 +115,7 @@ img {
   justify-content: center;
   font-family: "Courier New", Courier, monospace;
   width: 220px;
-  height: 150px;
+  height: 100px;
   border-radius: 20px;
   color: #c70039;
   background: radial-gradient(
@@ -92,52 +141,37 @@ img {
 
 #experience-form {
   margin: 100px 100px 0px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .description-experience {
-  width: 500px;
   height: 200px;
-  border-radius: 5px;
+  border-radius: 15px;
   color: #c70039;
   background-color: rgb(136, 163, 206);
 }
 
 .pseudo-form {
-  margin-right: 10px;
   height: 25px;
-  margin-bottom: -50px;
   border-radius: 20px;
   color: #c70039;
   background-color: rgb(136, 163, 206);
 }
 
-.submit-experience {
-  width: 105px;
-  height: 55px;
-  border-radius: 5px;
+#submit-experience {
+  margin: 30px;
+  width: 30%;
+  height: 50px;
+  border-radius: 30px;
   border: #aeaeae 1px solid;
-  background:  linear-gradient(to bottom, #c70039, #2a9d8f);
+  background: tomato;
   color: whitesmoke;
   cursor: pointer;
 }
 
-#lettre {
-  margin: 150px;
-}
-
-#submit-letter {
-  margin: 0px 10px 0px 10px;
-  background: linear-gradient(to bottom, #c70039, #2a9d8f);
-  color: whitesmoke;
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  border: #aeaeae 1px solid;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#submit-letter:hover {
+#submit-experience:hover {
   color: #2a9d8f;
 }
 
@@ -145,19 +179,19 @@ img {
   margin: 150px;
 }
 
-#submit-button {
-  margin: 0px 10px 0px 10px;
-  background: linear-gradient(to bottom, #c70039, #2a9d8f);
+#submit-letter {
+  margin: 75px;
+  background: tomato;
   color: whitesmoke;
   padding: 15px 30px;
   font-size: 1.2rem;
   border: #aeaeae 1px solid;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-#submit-button:hover {
+#submit-letter:hover {
   color: #2a9d8f;
 }
 
