@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <title>Cadeaux du Père Noël</title>
+  </head>
+  <body>
+    <header>
+      <nav class="menu-magique">
+        <ul>
+          <li><a href="./index.html">L'accueil enchanté</a></li>
+          <li><a href="./cadeaux.html">La Salle aux Cadeaux</a></li>
+          <li>
+            <a href="./photos-room.html">La salle aux photos</a>
+          </li>
+          <li>
+            <a href="./connexion.html">Connexion Magique</a>
+          </li>
+        </ul>
+      </nav>
+      <h1>La Salle aux Cadeaux 🎁</h1>
+    </header>
+
+    <section id="gifts">
+        <!-- Exemple avec une image pour la peluche magique -->
+        <div class="gift-card">
+          <h3>Peluche Magique</h3>
+          <img class="img-gift" src="./images/Bear.jpg" alt="Peluche Magique">
+          <p>Une adorable peluche qui parle et chante.</p>
+          <button onclick="selectGift(1)">Sélectionner</button>
+        </div>
+      
+        <!-- Exemple avec une image pour le livre enchanté -->
+        <div class="gift-card">
+          <h3>Livre Enchanté</h3>
+          <img class="img-gift" src="./images/Unhappy-new-year-book.jpg" alt="Livre Enchanté">
+          <p>Un livre interactif avec des histoires magiques.</p>
+          <button onclick="selectGift(2)">Sélectionner</button>
+        </div>
+      
+        <!-- Ajoutez d'autres cadeaux avec leurs images si nécessaire -->
+      </section>
+
+    <!-- Ajoutez ces sections dans votre code HTML où vous voulez afficher les filtres et les cadeaux -->
+    <section id="filters">
+      <label for="ageFilter">Filtrer par âge :</label>
+      <select id="ageFilter">
+        <!-- Options d'âge -->
+        <option value="Tous">Tous</option>
+        <option value="0-3">0-3 ans</option>
+        <option value="4-7">4-7 ans</option>
+        <option value="8-12">8-12 ans</option>
+        <option value="13+">13 ans et plus</option>
+      </select>
+
+      <label for="categoryFilter">Filtrer par catégorie :</label>
+      <select id="categoryFilter">
+        <!-- Options de catégorie -->
+        <option value="Tous">Tous</option>
+        <option value="jouets">Jouets</option>
+        <option value="livres">Livres</option>
+        <option value="vêtements">Vêtements</option>
+        <!-- Ajoutez d'autres catégories selon vos besoins -->
+      </select>
+    </section>
+
+    <script src="main.js"></script>
+
+    <footer>
+      <p>
+        &copy; 2023 <a href="./contact.html">Le site Magique du Père Noël</a> 🎅
+        Tous droits réservés.
+      </p>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>

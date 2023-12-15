@@ -14,230 +14,161 @@
   </head>
 
   <body>
-    <header>
-      <h1>
-        🎅🏻 WELCOME TO THE MAGICAL HOUSE OF SANTA CLAUS 🎅🏻
-        <br />🎁🎁🎁🎁🎁🎁🎁🎁
-    </h1>
-      </h1>
-    </header>
+    <section id="accueil">
+      <!-- Contenu de la page d'accueil -->
 
-    <section id="rennes-1">
-      <img src="./images/reindeer-christmas.png" alt="Christmas Reindeer" />
-    </section>
+      <header>
+        <nav class="menu-magique">
+          <ul>
+            <li><a href="./index.html">L'accueil enchanté</a></li>
+            <li><a href="./cadeaux.html">La Salle aux Cadeaux</a></li>
+            <li>
+              <a href="./photos-room.html">La salle aux photos</a>
+            </li>
+            <li>
+              <a href="./connexion.html">Connexion Magique</a>
+            </li>
+          </ul>
+        </nav>
+        <h1>
+          🎅🏻 JE VOUS SOUHAITE LA BIENVENUE DANS LA MAISON MAGIQUE DU PERE NOEL
+          🎅🏻
+          <br />🎁🎁🎁🎁🎁
+        </h1>
+      </header>
 
-    <section id="presentation">
-      <h2>✨🎄 La Magie de Noël 🎄✨</h2>
-      <p>
-        Plongez dans l'aventure aux côtés des rennes du Père Noël, ces créatures
-        majestueuses qui sillonnent les cieux, propulsant le traîneau chargé de
-        cadeaux. Leurs sabots dansent sur la neige, portant avec eux l'esprit de
-        la fête.
-      </p>
-      <p>
-        Le Père Noël et ses rennes sont prêts à vous emmener dans un voyage
-        magique. Vous pouvez même soumettre votre lettre de Noël pour que le
-        Père Noël puisse la lire avant de partir pour sa tournée.
-      </p>
-      <p>
-        Découvrez l'essence de Noël, une célébration empreinte de chaleur, de
-        partage et de moments précieux en famille. Les rires résonnent comme des
-        cloches, les décorations brillent de mille feux, et chaque coin de rue
-        évoque une histoire festive.
-      </p>
-    </section>
+      <section id="rennes-1">
+        <img src="./images/reindeer-christmas.png" alt="Christmas Reindeer" />
+      </section>
 
-<!-- Formulaire de Soumission sur la Page d'Accueil -->
-<section>
-   <h2>🎄🎅📝 Tout d'abord, fais ta liste de souhaits 📝🎅🎄</h2> 
+      <section id="presentation">
+        <h2>✨🎄 Vivez la Magie de Noël 🎄✨</h2>
+        <p>
+          Plongez dans l'aventure aux côtés des rennes du Père Noël, ces
+          créatures majestueuses qui sillonnent les cieux, propulsant le
+          traîneau chargé de cadeaux. Leurs sabots dansent sur la neige, portant
+          avec eux l'esprit de la fête.
+        </p>
+        <p>
+          Le Père Noël et ses rennes sont prêts à vous emmener dans un voyage
+          magique. Vous pouvez même soumettre votre lettre de Noël pour que le
+          Père Noël puisse la lire avant de partir pour sa tournée.
+        </p>
+        <p>
+          Découvrez l'essence de Noël, une célébration empreinte de chaleur, de
+          partage et de moments précieux en famille. Les rires résonnent comme
+          des cloches, les décorations brillent de mille feux, et chaque coin de
+          rue évoque une histoire festive.
+        </p>
+      </section>
 
-  <form id="formulaireLettre" onsubmit="soumettreLettre(); return false;">
-  <!-- Champs pour les informations personnelles -->
-  <label  for="nom">Nom :</label>
-  <input class="lastname"  type="text" id="nom" required>
+      <!-- Formulaire de Soumission sur la Page d'Accueil -->
+      <section>
+        <h2>
+          🎄🎅📝 Fais ta liste de souhaits, les Elfes se chargent du reste
+          📝🎅🎄
+        </h2>
 
-  <label for="prenom">Prénom :</label>
-  <input class="firstname" type="text" id="prenom" required>
+        <form id="formulaireLettre" onsubmit="soumettreLettre(); return false;">
+          <!-- Champs pour les informations personnelles -->
+          <label for="nom">Nom :</label>
+          <input class="lastname" type="text" id="nom" required />
 
-  <label for="age">Âge :</label>
-  <input class="age"  type="number" id="age" required>
+          <label for="prenom">Prénom :</label>
+          <input class="firstname" type="text" id="prenom" required />
 
-  <label for="adresse">Adresse :</label>
-  <input class="address"id="adresse" required><br>
+          <label for="age">Âge :</label>
+          <input class="age" type="number" id="age" required />
 
-  <!-- Champs pour la sélection ou création de cadeaux -->
-  <label  for="cadeaux">Cadeaux :</label>
-  <select class="gift" id="cadeaux" multiple>
-    <!-- Options de cadeaux depuis le catalogue -->
-    <option value="cadeau1">Cadeau 1</option>
-    <option value="cadeau2">Cadeau 2</option>
-    <!-- Ajoutez d'autres options depuis le catalogue -->
+          <label for="adresse">Adresse :</label>
+          <input class="address" id="adresse" required /><br />
 
-    <!-- Option pour créer un nouveau cadeau -->
-    <option value="nouveau">Créer un nouveau cadeau</option>
-  </select>
+          <!-- Champs pour la sélection ou création de cadeaux -->
+          <label for="cadeaux">Cadeaux :</label>
+          <select class="gift" id="cadeaux" multiple>
+            <!-- Options de cadeaux depuis le catalogue -->
+            <option value="cadeau1">Cadeau 1</option>
+            <option value="cadeau2">Cadeau 2</option>
+            <!-- Ajoutez d'autres options depuis le catalogue -->
 
-  <!-- Champs pour la création de nouveaux cadeaux -->
-  <div id="nouveauxCadeaux" style="display: none;">
-    <label for="nouveauCadeauNom">Nom du nouveau cadeau :</label>
-    <input type="text" id="nouveauCadeauNom">
+            <!-- Option pour créer un nouveau cadeau -->
+            <option value="nouveau">Créer un nouveau cadeau</option>
+          </select>
 
-    <label for="nouveauCadeauDescription">Description :</label>
-    <textarea id="nouveauCadeauDescription"></textarea>
+          <!-- Champs pour la création de nouveaux cadeaux -->
+          <div id="nouveauxCadeaux" style="display: none">
+            <label for="nouveauCadeauNom">Nom du nouveau cadeau :</label>
+            <input type="text" id="nouveauCadeauNom" />
 
-    <!-- Ajoutez d'autres champs pour les nouveaux cadeaux si nécessaire -->
-  </div>
+            <label for="nouveauCadeauDescription">Description :</label>
+            <textarea id="nouveauCadeauDescription"></textarea>
 
-  <!-- Bouton de Soumission -->
-  <button id="submit-letter" type="submit">Soumettre ma liste de cadeaux</button>
-</form>
-</section>
+            <!-- Ajoutez d'autres champs pour les nouveaux cadeaux si nécessaire -->
+          </div>
 
-<script>
-  function soumettreLettre() {
-    // Récupérez les valeurs du formulaire
-    const nom = document.getElementById("nom").value;
-    const prenom = document.getElementById("prenom").value;
-    const age = document.getElementById("age").value;
-    const adresse = document.getElementById("adresse").value;
+          <!-- Bouton de Soumission -->
+          <button id="submit-letter" type="submit">
+            Soumettre ma liste de cadeaux
+          </button>
+        </form>
+      </section>
 
-    // Récupérez les cadeaux sélectionnés ou créés
-    const cadeauxSelect = document.getElementById("cadeaux");
-    const cadeauxSelectionnes = Array.from(cadeauxSelect.selectedOptions).map(option => option.value);
+      <!-- Compte à rebours -->
+      <section id="compte-a-rebours">
+        <h2>Depêche toi le Jour J approche ..</h2>
+        <div id="countdown"></div>
+      </section>
 
-    // Vérifiez si des nouveaux cadeaux ont été créés
-    if (cadeauxSelectionnes.includes("nouveau")) {
-      const nouveauCadeauNom = document.getElementById("nouveauCadeauNom").value;
-      const nouveauCadeauDescription = document.getElementById("nouveauCadeauDescription").value;
+      <section id="share-experience">
+        <h2>Puis partage moi toutes tes belles expériences !</h2>
+        <form id="experience-form">
+          <label for="pseudo">Ton pseudo </label>
+          <input
+            class="pseudo-form"
+            type="text"
+            id="pseudo"
+            name="pseudo"
+            required
+          />
 
-      // Ajoutez la logique pour envoyer les nouveaux cadeaux aux Elfes
-      // (vous pouvez utiliser une API ou une autre méthode pour cela)
-    }
+          <label for="description">Décris moi tes expériences </label>
+          <textarea
+            class="description-experience"
+            id="description"
+            name="description"
+            required
+          ></textarea>
+        </form>
+        <button
+          id="submit-experience"
+          type="button"
+          onclick="soumettreExperience()"
+        >
+          Je valide !
+        </button>
 
-    // Ajoutez la logique pour envoyer la lettre au backend
-    // (vous pouvez utiliser une API ou une autre méthode pour cela)
-  }
-</script>
+        <div id="avis-validation">
+          <!-- Cette section affichera les avis validés par les Elfes -->
+        </div>
+      </section>
 
-   
+      <section id="rennes-2">
+        <img src="images/reindeer-christmas (1).png" alt="Christmas Reindeer" />
+      </section>
 
-    <section id="compte-a-rebours">
-      <h2>Depêche toi le Jour J approche ..</h2>
-      <div id="countdown">
-        <script>
-          // Fonction pour mettre à jour le compte à rebours
-          function updateCountdown() {
-            // Date de Noël (25 décembre)
-            const christmasDate = new Date(
-              "December 25, 2023 00:00:00"
-            ).getTime();
+      <!-- Ajout des flocons de neige -->
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
 
-            // Date actuelle
-            const currentDate = new Date().getTime();
-
-            // Calcul du temps restant en millisecondes
-            const timeRemaining = christmasDate - currentDate;
-
-            // Calcul des jours, heures, minutes et secondes
-            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-            const hours = Math.floor(
-              (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-            );
-            const minutes = Math.floor(
-              (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
-            );
-            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-            // Affichage du compte à rebours
-            document.getElementById("countdown").innerHTML = `
-                <div>${days} jours</div>
-                <div>${hours} heures</div>
-                <div>${minutes} minutes</div>
-                <div>${seconds} secondes</div>
-            `;
-
-            // Mise à jour toutes les secondes
-            setTimeout(updateCountdown, 1000);
-          }
-
-          // Appel initial de la fonction
-          updateCountdown();
-        </script>
-      </div>
-    </section>
-
-  
-    <section id="share-experience">
-      <h2>Puis partage moi ton expérience !</h2>
-      <form id="experience-form">
-        <label for="pseudo">Ton pseudo </label>
-        <input class="pseudo-form" type="text" id="pseudo" name="pseudo" required />
-
-        <label for="description">Décris moi tes expériences </label>
-        <textarea class="description-experience" id="description" name="description" required></textarea>
-      </form>
-      <button id="submit-experience" type="button" onclick="soumettreExperience()">Je valide ! </button>
-
-      <div id="avis-validation">
-        <!-- Cette section affichera les avis validés par les Elfes -->
-      </div>
-    </section>
-
+      <footer>
+        <p>&copy; 2023 <a href="./contact.html">Le site Magique du Père Noël</a> 🎅 Tous droits réservés.</p>
+      </footer>
     
-    <section id="rennes-2">
-      <img src="images/reindeer-christmas (1).png"Christmas Reindeer" />
-    </section>
-
-
-    <!-- Ajout des flocons de neige -->
-    <div class="snowflake"></div>
-    <div class="snowflake"></div>
-    <div class="snowflake"></div>
-    <div class="snowflake"></div>
-    <div class="snowflake"></div>
-    <div class="snowflake"></div>
-
-    <script>
-      document.addEventListener("mousemove", function (e) {
-        // Récupérer la position de la souris
-        const mouseX = e.pageX;
-        const mouseY = e.pageY;
-
-        // Appliquer la position aux flocons de neige
-        const snowflakes = document.querySelectorAll(".snowflake");
-        snowflakes.forEach(function (snowflake, index) {
-          const deltaX = mouseX - snowflake.offsetLeft;
-          const deltaY = mouseY - snowflake.offsetTop;
-
-          // Mettre à jour la position des flocons en fonction de la position de la souris
-          snowflake.style.transform = `translate(${deltaX * (index + 1)}px, ${
-            deltaY * (index + 1)
-          }px)`;
-        });
-      });
-    </script>
-
-    <footer>
-      <p>&copy; 2023 Site Magique du Père Noël. Tous droits réservés.</p>
-    </footer>
-
-    <script>
-        function soumettreExperience() {
-          const pseudo = document.getElementById("pseudo").value;
-          const description = document.getElementById("description").value;
-      
-          // Soumettez les données au serveur ou à une base de données
-          // pour la validation par les Elfes (côté serveur).
-      
-          // Pour cet exemple, affichons simplement l'avis soumis.
-          const avisValidation = document.getElementById("avis-validation");
-          const nouvelAvis = document.createElement("div");
-          nouvelAvis.innerHTML = `<strong>${pseudo} </strong> ${description}`;
-          avisValidation.appendChild(nouvelAvis);
-      
-          // Réinitialisez le formulaire après la soumission
-          document.getElementById("experience-form").reset();
-        }
-      </script>
+    </section> 
+    <script src="main.js"></script>
   </body>
 </html>

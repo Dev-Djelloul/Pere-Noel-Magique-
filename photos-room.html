@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <!-- ... Vos balises meta et liens CSS ... -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-Tf4EqvsIO+OYfTAK9ZeqUoA2j1c+2a0I+FqzE67auE3lFUnJW3lEIl5a1+cBuNcG" crossorigin="anonymous">
+   <!-- ... Autres balises meta et liens CSS ... -->
+    <title>Site magique du Père Noël</title>
+  </head>
+
+
+      <header>
+        <nav class="menu-magique">
+          <ul>
+            <li><a href="./index.html">L'accueil enchanté</a></li>
+            <li><a href="./cadeaux.html">La Salle aux Cadeaux</a></li>
+            <li>
+              <a href="./photos-room.html">La Salle aux Photos</a>
+            </li>
+            <li>
+              <a href="./connexion.html">Connexion Magique</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <body>  
+        <section id="contenu-salle-cadeaux">
+          <h2>La salle aux photos</h2>
+            <!-- Coin photo -->
+            <div class="photo-corner">
+              <!-- Fond photo amusant -->
+              <img class="photo-background" src="/images/cadeaux-de-noel (1).png" alt="Fond photo amusant">
+
+              <!-- Overlay avec instructions -->
+              <div class="photo-overlay">
+                <p class="photo-instructions">Prenez une photo et déposez-la ici</p>
+
+                <!-- Espace pour les photos prises -->
+                <div class="photo-booth">
+                  <!-- Vous pouvez ajouter davantage d'images pour représenter les photos prises -->
+                  <!-- <img src="photo1.jpg" alt="Photo prise par un invité"> -->
+                  <!-- <img src="photo2.jpg" alt="Photo prise par un invité"> -->
+                </div>
+
+              <!-- Formulaire d'envoi de fichiers -->
+                <div class="file-upload">
+                  <form action="upload.php" method="post" enctype="multipart/form-data">
+                    <label for="photoInput" class="file-input">Télécharger une photo</label>
+                    <input type="file" name="file" id="photoInput" accept="image/*">
+                    <input type="submit" value="Envoyer">
+                  </form>
+                </div>
+
+              </div>
+            </div>
+
+        <!-- Bouton pour ouvrir la modal -->
+        <button class="button-modal" onclick="openModal()">Click here </button>
+
+        <!-- La modal -->
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>En ce jour d'hiver 2024, le père Noël 🎅 a eu un incident !!! Il n'y aura donc pas de cadeaux cette année haha C'EST UNE BLAGUE BIEN SUR !!!!!!</p>
+          </div>
+        </div>
+
+        <script>
+          // Fonction pour ouvrir la modal
+          function openModal() {
+            document.getElementById('myModal').style.display = 'block';
+          }
+
+          // Fonction pour fermer la modal
+          function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+          }
+
+          // Fermer la modal si l'utilisateur clique en dehors de la modal
+          window.onclick = function(event) {
+            var modal = document.getElementById('myModal');
+            if (event.target == modal) {
+              modal.style.display = 'none';
+            }
+          }
+        </script>
+
+      <footer>
+        <p>&copy; 2023 <a href="./contact.html">Le site Magique du Père Noël</a> 🎅 Tous droits réservés.</p>
+      </footer>
+
+    </body> 
+</html>

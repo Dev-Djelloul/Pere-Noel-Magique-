@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&family=Rubik+Bubbles&family=Silkscreen&display=swap"
+      rel="stylesheet"
+    />
+    <title>Contact avec le Père Noël</title>
+  </head>
+  <body>
+    <header>
+      <nav class="menu-magique">
+        <ul>
+          <li><a href="./index.html">L'accueil enchanté</a></li>
+          <li><a href="./cadeaux.html">La Salle aux Cadeaux</a></li>
+          <li>
+            <a href="./photos-room.html">La Salle aux Photos</a>
+          </li>
+          <li>
+            <a href="./connexion.html">Connexion Magique</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="contact">
+      <!-- Contenu de la page de contact avec le Père Noël -->
+      <h1>Contactez moi 🎅</h1>
+    </section>
+
+    <form id="form" action="envoyer_mail.php" method="post">
+      <label for="prenom">Prénom :</label>
+      <input type="text" id="prenom" name="prenom" required />
+
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" required />
+
+      <label for="age">Âge :</label>
+      <input type="number" id="age" name="age" required />
+
+      <label for="email">Adresse e-mail :</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="adresse">Adresse postale :</label>
+      <textarea id="adresse" name="adresse" required></textarea>
+
+      <label for="message">Votre message :</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Envoyer la demande</button>
+    </form>
+    <footer>
+      <p>&copy; 2023 <a href="./contact.html">Le site Magique du Père Noël</a> 🎅 Tous droits réservés.</p>
+    </footer>
+  </body>
+</html>
