@@ -10,16 +10,22 @@ body {
   color: rgb(236, 228, 228);
   text-align: center;
   margin: 50px;
-  position: relative; /* Permet le positionnement absolu des flocons de neige */
+  position: relative; 
+  /* Permet le positionnement absolu des flocons de neige */
   overflow-x: hidden;
 }
 
 /* Style pour le menu magique */
+
 .menu-magique {
   background: linear-gradient(to right, #c70039, #2a9d8f);
-  padding: 0px;
+  padding: 20px; 
   margin: -50px;
   text-align: center;
+  
+  /* Rend la barre de navigation initialement transparente */
+  transition: opacity 0.1s ease; 
+  /* Ajoute une transition fluide lors du changement d'opacité */
 }
 
 .menu-magique ul {
@@ -29,7 +35,9 @@ body {
 }
 
 .menu-magique li {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-right: 50px;
 }
 
@@ -42,21 +50,13 @@ body {
 }
 
 .menu-magique a:hover {
-  color: #ffdb4d; /* Couleur au survol */
-}
-
-/* Style pour la barre de navigation */
-.menu-magique {
-  background: linear-gradient(to right, #c70039, #2a9d8f);
-  padding: 10px; /* Ajustez le padding selon vos besoins */
-  margin: -50px;
-  text-align: center;
-  opacity: 0; /* Rend la barre de navigation initialement transparente */
-  transition: opacity 0.1s ease; /* Ajoute une transition fluide lors du changement d'opacité */
+  color: #ffdb4d; 
+  /* Couleur au survol */
 }
 
 .menu-magique:hover {
-  opacity: 1; /* Rend la barre de navigation visible au survol */
+  opacity: 1; 
+  /* Rend la barre de navigation visible au survol */
 }
 
 #form {
@@ -72,17 +72,20 @@ body {
 }
 
 h1 {
-  font-size: 55px;
+  font-size: 45px;
   box-shadow: #aeaeae 0px 0px 10px 0px;
   margin: 100px;
 }
 
 h2 {
+  font-size: 30px;
+  width: 100%;
   background: linear-gradient(to bottom, #c70039, #2a9d8f);
   margin: 80px 0px 100px 0px;
   border-radius: 80px;
   border-top-right-radius: 0px;
   border-bottom-left-radius: 0px;
+  box-shadow: #aeaeae 0px 0px 10px 0px;
 }
 
 h2:hover {
@@ -101,13 +104,19 @@ h3 {
   font-size: 30px;
 }
 
+p {
+  font-size: smaller;
+}
+
 img {
   width: 100%;
   height: auto;
   border-radius: 50px;
+  border: 5px solid #191521;
+  box-shadow: #aeaeae 0px 0px 50px 0px;
 }
 
-/* Ajoutez la propriété max-width pour redimensionner les images */
+
 .img-gift {
   max-width: 30%;
   height: auto;
@@ -115,12 +124,35 @@ img {
 }
 
 #gifts {
-  margin: 100px;
+  margin: 10px;
   display: flex;
-  flex-wrap: row-reverse;
+  flex-direction: row;
   justify-content: center;
 }
 
+.gift-card {
+  margin: 10px;
+  width: 30%;
+  height: 550px;
+  border-radius: 50px;
+  border: 5px solid #191521;
+  box-shadow: #aeaeae 0px 0px 50px 0px;
+  font-size: smaller;
+  background-color:#9f915a;
+}
+
+.button-gift {
+  margin: 50px;
+  width: 35%;
+  height: 50px;
+  font-size: large;
+  border-radius: 30px;
+  border: #aeaeae 1px solid;
+  background: tomato;
+  color: whitesmoke;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
 #formulaireLettre {
   margin: 60px 0px 0px 0px;

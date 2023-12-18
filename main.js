@@ -98,75 +98,92 @@ document.addEventListener("mousemove", function (e) {
   });
 });
 
-// Liste des cadeaux avec leurs propriétés (id, nom, catégorie, âge, description)
-// ... (autres parties du code)
 
-const giftsList = [
+
+
+// Liste des cadeaux avec leurs détails
+const gifts = [
   {
     id: 1,
     name: "Peluche Magique",
-    category: "jouets",
     age: "0-3",
-    description: "Une adorable peluche qui parle et chante.",
-    image: "images/Bear.jpg", // Ajoutez le lien de l'image de la peluche
+    category: "jouets",
+    description: "Une adorable peluche qui parle et chante",
   },
   {
     id: 2,
     name: "Livre Enchanté",
-    category: "livres",
     age: "4-7",
-    description: "Un livre interactif avec des histoires magiques.",
-    image: "images/Unhappy-new-year-book.jpg", // Ajoutez le lien de l'image du livre
+    category: "livres",
+    description: "Un livre interactif avec des histoires magiques",
   },
-  // Ajoutez d'autres cadeaux selon vos besoins
+  {
+    id: 3,
+    name: "Pull-over chaud",
+    age: "8-12",
+    category: "vêtements",
+    description: "Un joli vêtement pour tenir au chaud pour l'hiver",
+  },
+  // Ajoutez d'autres cadeaux avec leurs détails si nécessaire
 ];
 
-function displayGifts(filteredGifts) {
-  const giftsContainer = document.getElementById("gifts");
-  giftsContainer.innerHTML = ""; // Effacer le contenu actuel
+document.addEventListener("DOMContentLoaded", function () {
+  // Fonction pour afficher les cadeaux sur la page
+  function displayGifts(filteredGifts) {
+    const giftsContainer = document.getElementById("gifts");
+    giftsContainer.innerHTML = "";
 
-  filteredGifts.forEach((gift) => {
-    const giftCard = document.createElement("div");
-    giftCard.classList.add("gift-card");
+    filteredGifts.forEach((gift) => {
+      const giftCard = document.createElement("div");
+      giftCard.classList.add("gift-card");
 
-    // Ajoutez du contenu à la carte du cadeau (nom, description, image, etc.)
-    giftCard.innerHTML = `
-      <h3>${gift.name}</h3>
-      <img src="${gift.image}" alt="${gift.name}" />
-      <p>${gift.description}</p>
-      <button onclick="selectGift(${gift.id})">Sélectionner</button>
-    `;
+      giftCard.innerHTML = `
+        <h4>${gift.name}</h4>
+        <img class="img-gift" src="./images/${gift.id}.jpg" alt="${gift.name}">
+        <p>${gift.description}</p>
+        <button class="button-gift" onclick="selectGift(${gift.id})">Sélectionner</button>
+      `;
 
-    giftsContainer.appendChild(giftCard);
-  });
-}
-
-// ... (autres parties du code)
-
-// Liste des cadeaux sélectionnés
-const selectedGifts = [];
-
-// Fonction pour sélectionner un cadeau et l'ajouter à la liste des cadeaux sélectionnés
-function selectGift(giftId) {
-  const selectedGift = giftsList.find((gift) => gift.id === giftId);
-
-  if (selectedGift) {
-    selectedGifts.push(selectedGift);
-    // Ajoutez une logique supplémentaire si nécessaire (peut-être un message de confirmation, etc.)
+      giftsContainer.appendChild(giftCard);
+    });
   }
-}
 
-// Écouteurs d'événements pour les changements dans les filtres d'âge et de catégorie
-document.getElementById("ageFilter").addEventListener("change", updateGifts);
-document
-  .getElementById("categoryFilter")
-  .addEventListener("change", updateGifts);
+  // Fonction pour filtrer les cadeaux en fonction de l'âge et de la catégorie
+  window.filterGifts = function () {
+    const ageFilter = document.getElementById("ageFilter").value;
+    const categoryFilter = document.getElementById("categoryFilter").value;
 
-// Fonction pour mettre à jour la liste des cadeaux en fonction des filtres sélectionnés
-function updateGifts() {
-  const ageFilter = document.getElementById("ageFilter").value;
-  const categoryFilter = document.getElementById("categoryFilter").value;
+    const filteredGifts = gifts.filter((gift) => {
+      return (
+        (ageFilter === "Tous" || gift.age === ageFilter) &&
+        (categoryFilter === "Tous" || gift.category === categoryFilter)
+      );
+    });
 
-  const filteredGifts = filterGifts(ageFilter, categoryFilter);
-  displayGifts(filteredGifts);
-}
+    displayGifts(filteredGifts);
+  };
+
+  // Fonction pour afficher les détails du cadeau sélectionné
+  window.selectGift = function (giftId) {
+    const selectedGift = gifts.find((gift) => gift.id === giftId);
+
+    // Vous pouvez ajouter ici le code pour afficher les détails du cadeau sélectionné.
+    console.log("Cadeau sélectionné :", selectedGift);
+  };
+
+  // Initialiser l'affichage avec tous les cadeaux
+  displayGifts(gifts);
+
+  // Ajouter un écouteur d'événements pour les filtres
+  document
+    .getElementById("ageFilter")
+    .addEventListener("change", window.filterGifts);
+  document
+    .getElementById("categoryFilter")
+    .addEventListener("change", window.filterGifts);
+
+  // Ajouter un écouteur d'événements pour le bouton de filtrage
+  document
+    .getElementById("filterButton")
+    .addEventListener("click", filterGifts);
+});
